@@ -23,7 +23,7 @@ const page = async ({ params }: IParams) => {
   let param = await params;
   const res = await fetch(`http://localhost:3000/api/marketdata/${param.slug}`);
   const data: Iproduct = await res.json();
-  let productData = data.filteredData;
+  const productData = data.filteredData;
   return (
     <div className="bg-red-500 pt-1 pb-10">
       {productData.map((item) => {
